@@ -14,7 +14,7 @@ idna==3.3
 itsdangerous==2.0.1
 Jinja2==3.0.3
 jmespath==0.10.0
-mangum==0.12.4
+mangum==0.11.0
 MarkupSafe==2.0.1
 orjson==3.6.7
 pydantic==1.9.0
