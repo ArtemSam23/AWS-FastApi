@@ -1,11 +1,15 @@
 from mangum import Mangum
-from fastapi import FastAPI
-
-app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+async def app(scope, receive, send):
+    await send(
+        {
+            "type": "http.response.start",
+            "status": 200,
+            "headers": [[b"content-type", b"text/plain; charset=utf-8"]],
+        }
+    )
+    await send({"type": "http.response.body", "body": b"Hello, world!"})
 
-handler = Mangum(app=app)
+
+handler = Mangum(app)
