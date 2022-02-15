@@ -13,4 +13,4 @@ async def root():
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
-handler = Mangum(app)
+handler = Mangum(app, spec_version=2)
